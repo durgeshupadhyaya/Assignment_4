@@ -17,7 +17,7 @@ import retrofit2.Retrofit;
 
 public class LoginActivity extends AppCompatActivity {
 
-    EditText username, password;
+    EditText mobile, password;
     Button signup, login;
 
     @Override
@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        username = findViewById(R.id.username);
+        mobile = findViewById(R.id.mobile);
         password = findViewById(R.id.password);
         login = findViewById(R.id.login);
         signup = findViewById(R.id.signup);
@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ApiUser user = new ApiUser(username.getText().toString(), password.getText().toString());
+                ApiUser user = new ApiUser(mobile.getText().toString(), password.getText().toString());
                 UserApi userApi = new UserApi();
                 if(userApi.userLogin(user)){
                     Intent intent = new Intent(LoginActivity.this,DashboardActivity.class);

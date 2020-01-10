@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,6 +17,9 @@ public class SignupActivity extends AppCompatActivity {
     RelativeLayout create, name, birthday, gender, mobile, pass, em, terms;
     Button next1, next2, next3, next4, next5, next6, next7, next8;
     TextView menu;
+    EditText first_name,last_name, number,email,password;
+    RadioGroup rgGender;
+    String f_name,l_name,dob, genders, mobile_num, passwords,emails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,7 +115,15 @@ public class SignupActivity extends AppCompatActivity {
         next8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(SignupActivity.this, "New Account created Successfully...!!!", Toast.LENGTH_SHORT).show();
+
+                f_name = first_name.getText().toString();
+                l_name = last_name.getText().toString();
+                mobile_num = number.getText().toString();
+                emails = email.getText().toString();
+                passwords = password.getText().toString();
+
+
+                Toast.makeText(SignupActivity.this, "Registration Successfully!!..", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
                 startActivity(intent);
             }

@@ -25,7 +25,7 @@
             android:text="Español •  Français • More..." />
 
         <EditText
-            android:id="@+id/username"
+            android:id="@+id/mobile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/language"
@@ -38,7 +38,7 @@
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/username"
+            android:layout_below="@+id/mobile"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="30dp"

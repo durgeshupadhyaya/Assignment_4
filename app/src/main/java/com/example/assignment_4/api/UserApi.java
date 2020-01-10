@@ -19,7 +19,7 @@ public class UserApi {
             Response<ApiUser> loginResponse = userCall.execute();
             if (loginResponse.isSuccessful()) {
                 isloggedIn = true;
-                Retrofit.token += loginResponse.body().getToken();
+                Retrofit.token += loginResponse.body().getTokens();
             }
         } catch (IOException e) {
             e.printStackTrace();

@@ -9,4 +9,7 @@ import retrofit2.http.POST;
 public interface Facebook {
     @POST("login")
     Call<ApiUser> userLogin(@Body ApiUser apiUser);
+
+    @POST("Signup")
+    Call<ApiUser> signup(@Body ApiUser apiUser);
 }
