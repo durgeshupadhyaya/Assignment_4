@@ -406,7 +406,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:gravity="center"
-            android:text="What's your Email"
+            android:text="What's you Email"
             android:textColor="#000" />
 
         <com.google.android.material.textfield.TextInputLayout

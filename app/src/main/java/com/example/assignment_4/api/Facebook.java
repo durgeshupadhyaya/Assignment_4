@@ -11,5 +11,5 @@ public interface Facebook {
     Call<ApiUser> userLogin(@Body ApiUser apiUser);
 
     @POST("Signup")
-    Call<ApiUser> signup(@Body ApiUser apiUser);
+    Call<Void> userRegister(@Body ApiUser apiUser);
 }

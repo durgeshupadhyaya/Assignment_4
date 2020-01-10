@@ -5,6 +5,7 @@ import com.example.assignment_4.model.ApiUser;
 import java.io.IOException;
 
 import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Response;
 
 public class UserApi {
@@ -27,6 +28,18 @@ public class UserApi {
         return isloggedIn;
     }
 
-    public void userReg() {
+    public void userRegister(ApiUser newUser) {
+        Call<Void> addNew = fb.userRegister(newUser);
+        addNew.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+
+            }
+        });
     }
 }

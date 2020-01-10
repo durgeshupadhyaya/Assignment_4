@@ -1,7 +1,7 @@
 package com.example.assignment_4.model;
 
 public class ApiUser {
-    private String firstname, lastname, birthday, gender, mobile, password, email, tokens;
+    private String first_name, last_name, birthday, gender, mobile, password, email, tokens;
 
 
     public ApiUser(String mobile, String password) {
@@ -9,31 +9,30 @@ public class ApiUser {
         this.password = password;
     }
 
-    public ApiUser(String firstname, String lastname, String birthday, String gender, String mobile, String password, String email, String tokens) {
-        this.firstname = firstname;
-        this.lastname = lastname;
+    public ApiUser(String first_name, String last_name, String birthday, String gender, String mobile, String password, String email) {
+        this.first_name = first_name;
+        this.last_name = last_name;
         this.birthday = birthday;
         this.gender = gender;
         this.mobile = mobile;
         this.password = password;
         this.email = email;
-        this.tokens = tokens;
     }
 
     public String getFirstname() {
-        return firstname;
+        return first_name;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstname(String first_name) {
+        this.first_name = first_name;
     }
 
     public String getLastname() {
-        return lastname;
+        return last_name;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastname(String last_name) {
+        this.last_name = last_name;
     }
 
     public String getBirthday() {

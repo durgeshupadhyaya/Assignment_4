@@ -12,6 +12,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.assignment_4.api.UserApi;
+import com.example.assignment_4.model.ApiUser;
+
 public class SignupActivity extends AppCompatActivity {
 
     RelativeLayout create, name, birthday, gender, mobile, pass, em, terms;
@@ -19,12 +22,19 @@ public class SignupActivity extends AppCompatActivity {
     TextView menu;
     EditText first_name,last_name, number,email,password;
     RadioGroup rgGender;
-    String f_name,l_name,dob, genders, mobile_num, passwords,emails;
+    String f_name,l_name,dob, genders, mobile_no, passwords,emails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+
+        first_name = findViewById(R.id.first_name);
+        last_name = findViewById(R.id.last_name);
+        number = findViewById(R.id.number);
+        email = findViewById(R.id.email);
+        password = findViewById(R.id.password);
+        rgGender = findViewById(R.id.rG);
 
         create = findViewById(R.id.create);
         name = findViewById(R.id.name);
@@ -118,9 +128,14 @@ public class SignupActivity extends AppCompatActivity {
 
                 f_name = first_name.getText().toString();
                 l_name = last_name.getText().toString();
-                mobile_num = number.getText().toString();
+                mobile_no = number.getText().toString();
                 emails = email.getText().toString();
+                dob = "1997/07/07";
                 passwords = password.getText().toString();
+
+                ApiUser newUser = new ApiUser(f_name , l_name,  dob, genders, mobile_no, passwords, emails);
+                UserApi userApi = new UserApi();
+                userApi.userRegister(newUser);
 
 
                 Toast.makeText(SignupActivity.this, "Registration Successfully!!..", Toast.LENGTH_SHORT).show();
